@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import mandalaImg from "@/public/photos/mandala.webp"; // Update path relative to your directory structure
 
 interface MandalaProps {
   size: number;
@@ -38,10 +39,8 @@ export default function Mandala({ size }: MandalaProps) {
       }}
     >
       <Image
-        src="/photos/mandala.webp"
-        alt={"mandala image"}
-        width={size}
-        height={size}
+        src={mandalaImg}
+        alt="mandala image"
         priority={true}
         style={{ objectFit: "contain", width: "100%", height: "100%" }}
       />
