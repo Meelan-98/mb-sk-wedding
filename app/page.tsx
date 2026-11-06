@@ -28,7 +28,7 @@ export default function Page() {
           style={{
             fontWeight: 300,
             fontSize: "clamp(32px, 8vw, 96px)",
-            margin: "24px 0 0",
+            margin: 0,
             color: "#a07c34",
             lineHeight: 1.2,
             display: "flex",
@@ -173,7 +173,7 @@ export default function Page() {
             Seating Arrangement
           </Title>
           <Text type="secondary" style={{ display: "block", marginBottom: 24 }}>
-            Find your name to see your table.
+            Enter your name to find your table.
           </Text>
         </Reveal>
         <Reveal delay={0.1}>
@@ -211,7 +211,7 @@ export default function Page() {
               fontWeight: 400,
               color: "#a07c34",
               fontSize: "clamp(24px, 5vw, 36px)",
-              marginBottom: 24,
+              marginBottom: 60,
             }}
           >
             Counting down to our day
