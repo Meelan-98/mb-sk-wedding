@@ -26,3 +26,25 @@ body { margin: 0; background: #fff; color: var(--ink); font-family: var(--font-b
   .lotus path { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+
+@keyframes writeIn {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.written-letter {
+  display: inline-block;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  animation: writeIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+

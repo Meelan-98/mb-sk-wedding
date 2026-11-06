@@ -16,11 +16,12 @@ const label = {
   marginBottom: 6,
 } as const;
 
+const text = `${wedding.groom} ❤️ ${wedding.bride}`;
+
 export default function Page() {
   return (
     <main>
       <section className="hero">
-        <Mandala size={150} />
         <Title
           className="serif"
           style={{
@@ -29,9 +30,20 @@ export default function Page() {
             margin: "24px 0 0",
             color: "#a07c34",
             lineHeight: 1.1,
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
-          {wedding.bride} ❤️ {wedding.groom}
+          {text.split("").map((char, index) => (
+            <span
+              key={index}
+              className="written-letter"
+              style={{ animationDelay: `${index * 0.08}s` }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </Title>
       </section>
 
