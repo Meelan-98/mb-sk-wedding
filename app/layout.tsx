@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
-import Nav from "@/components/Nav";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -42,7 +41,6 @@ export default function RootLayout({
               },
             }}
           >
-            <Nav />
             {children}
           </ConfigProvider>
         </AntdRegistry>

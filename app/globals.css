@@ -13,7 +13,7 @@ body { margin: 0; background: #fff; color: var(--ink); font-family: var(--font-b
 .lotus path { transform-box: fill-box; transform-origin: 50% 100%; animation: bloom 1.6s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--pd, 0s); }
 @keyframes bloom { from { opacity: 0; transform: scale(.2); } to { opacity: 1; } }
 
-.hero { min-height: 88vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px 24px; }
+.hero { min-height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px 24px; }
 .masonry { column-count: 1; column-gap: 28px; }
 @media (min-width: 640px) { .masonry { column-count: 2; } }
 @media (min-width: 1000px) { .masonry { column-count: 3; } }
