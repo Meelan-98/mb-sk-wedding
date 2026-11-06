@@ -17,9 +17,33 @@ const body = Jost({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://meelan-98.github.io/mb-sk-wedding/"),
   title: "Shehani & Meelan",
   description: "Join us on 2026.11.11",
+  openGraph: {
+    title: "Shehani & Meelan",
+    description: "Join us on 2026.11.11",
+    url: "./",
+    siteName: "Shehani & Meelan Wedding",
+    images: [
+      {
+        url: "photos/og-v1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Shehani & Meelan",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shehani & Meelan",
+    description: "Join us on 2026.11.11",
+    images: ["photos/og-v1.webp"],
+  },
 };
+
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };
 
 export default function RootLayout({
