@@ -38,7 +38,7 @@ export default function Mandala({ size }: MandalaProps) {
       }}
     >
       <Image
-        src="/photos/mandala.png"
+        src="/photos/mandala.webp"
         alt={"mandala image"}
         width={size}
         height={size}
