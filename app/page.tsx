@@ -32,14 +32,11 @@ export default function Page() {
         >
           {wedding.bride} ❤️ {wedding.groom}
         </Title>
-        <hr className="rule" />
-        <Text
-          className="serif"
-          style={{ fontSize: "clamp(22px, 4vw, 30px)", letterSpacing: 4 }}
-        >
-          {wedding.dateLabel}
-        </Text>
       </section>
+
+      <Divider style={{ borderColor: "#e8d9b0", margin: 0 }}>
+        <Mandala size={36} />
+      </Divider>
 
       <section className="section wrap">
         <Reveal>
@@ -52,6 +49,7 @@ export default function Page() {
                 href={wedding.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="ant-typography ant-typography-secondary hover:underline"
               >
                 Click here to open in Maps
               </Link>
@@ -59,6 +57,8 @@ export default function Page() {
             <Col xs={24} md={8}>
               <Text style={label}>Date</Text>
               <Text style={{ fontSize: 18 }}>{wedding.dateLabel}</Text>
+              <br />
+              <Text type="secondary">{wedding.dayLabel}</Text>
             </Col>
             <Col xs={24} md={8}>
               <Text style={label}>Time</Text>
