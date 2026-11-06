@@ -39,12 +39,17 @@ export default function Story() {
       <div className="masonry">
         {photos.map((p, i) => (
           <Reveal key={p.src} delay={(i % 3) * 0.08} className="photo">
-            <figure style={{ margin: 0 }}>
-              <Image
-                src={asset(p.src)}
-                alt={p.caption}
-                style={{ width: "100%", height: "auto" }}
-              />
+            <figure
+              style={{ margin: 0, breakInside: "avoid", marginBottom: 24 }}
+            >
+              {/* Using a wrapper with display: block to let the natural image height render */}
+              <div style={{ width: "100%" }}>
+                <Image
+                  src={asset(p.src)}
+                  alt={p.caption}
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              </div>
               <figcaption style={{ paddingTop: 10 }}>
                 <Text
                   className="serif"

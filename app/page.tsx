@@ -11,7 +11,7 @@ const { Title, Text, Link: AntLink } = Typography;
 const label = {
   color: "#a07c34",
   fontFamily: "var(--font-display)",
-  fontSize: 22,
+  fontSize: "clamp(18px, 4vw, 22px)",
   display: "block",
   marginBottom: 6,
 } as const;
@@ -20,19 +20,22 @@ const text = `${wedding.groom} ❤️ ${wedding.bride}`;
 
 export default function Page() {
   return (
-    <main>
-      <section className="hero">
+    <main style={{ overflowX: "hidden", width: "100%" }}>
+      {/* Hero Section */}
+      <section className="hero" style={{ padding: "0 16px" }}>
         <Title
           className="serif"
           style={{
             fontWeight: 300,
-            fontSize: "clamp(44px, 10vw, 96px)",
+            fontSize: "clamp(32px, 8vw, 96px)",
             margin: "24px 0 0",
             color: "#a07c34",
-            lineHeight: 1.1,
+            lineHeight: 1.2,
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
+            textAlign: "center",
+            wordBreak: "break-word",
           }}
         >
           {text.split("").map((char, index) => (
@@ -51,31 +54,39 @@ export default function Page() {
         <Mandala size={36} />
       </Divider>
 
-      <section className="section wrap">
+      {/* Details Section */}
+      <section className="section wrap" style={{ padding: "40px 16px" }}>
         <Reveal>
-          <Row gutter={[32, 40]}>
+          <Row gutter={[32, 24]} style={{ textAlign: "center" }}>
             <Col xs={24} md={8}>
               <Text style={label}>Location</Text>
-              <Text style={{ fontSize: 18 }}>{wedding.venue}</Text>
+              <Text style={{ fontSize: "clamp(16px, 3.5vw, 18px)" }}>
+                {wedding.venue}
+              </Text>
               <br />
               <AntLink
                 href={wedding.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ant-typography ant-typography-secondary hover:underline"
+                style={{ display: "inline-block", marginTop: 4 }}
               >
                 Click here to open in Maps
               </AntLink>
             </Col>
             <Col xs={24} md={8}>
               <Text style={label}>Date</Text>
-              <Text style={{ fontSize: 18 }}>{wedding.dateLabel}</Text>
+              <Text style={{ fontSize: "clamp(16px, 3.5vw, 18px)" }}>
+                {wedding.dateLabel}
+              </Text>
               <br />
               <Text type="secondary">{wedding.dayLabel}</Text>
             </Col>
             <Col xs={24} md={8}>
               <Text style={label}>Time</Text>
-              <Text style={{ fontSize: 18 }}>{wedding.time}</Text>
+              <Text style={{ fontSize: "clamp(16px, 3.5vw, 18px)" }}>
+                {wedding.time}
+              </Text>
               <br />
               <Text type="secondary">{wedding.poruwa}</Text>
             </Col>
@@ -87,12 +98,21 @@ export default function Page() {
         <Mandala size={36} />
       </Divider>
 
-      <section className="section wrap" style={{ textAlign: "center" }}>
+      {/* Story Section */}
+      <section
+        className="section wrap"
+        style={{ textAlign: "center", padding: "40px 16px" }}
+      >
         <Reveal>
           <Title
             level={2}
             className="serif"
-            style={{ fontWeight: 400, color: "#a07c34", marginBottom: 16 }}
+            style={{
+              fontWeight: 400,
+              color: "#a07c34",
+              marginBottom: 16,
+              fontSize: "clamp(24px, 5vw, 36px)",
+            }}
           >
             It has been six wonderful years
           </Title>
@@ -100,9 +120,10 @@ export default function Page() {
             type="secondary"
             style={{
               display: "block",
-              fontSize: 18,
+              fontSize: "clamp(15px, 3.5vw, 18px)",
               maxWidth: 600,
               margin: "0 auto 24px",
+              padding: "0 8px",
             }}
           >
             Since 2020.08.31 we shared beautiful moments together. Wanna see a
@@ -134,12 +155,20 @@ export default function Page() {
         <Mandala size={36} />
       </Divider>
 
-      <section className="section wrap">
+      {/* Seating Section */}
+      <section
+        className="section wrap"
+        style={{ textAlign: "center", padding: "40px 16px" }}
+      >
         <Reveal>
           <Title
             level={2}
             className="serif"
-            style={{ fontWeight: 400, color: "#a07c34" }}
+            style={{
+              fontWeight: 400,
+              color: "#a07c34",
+              fontSize: "clamp(24px, 5vw, 36px)",
+            }}
           >
             Seating Arrangement
           </Title>
@@ -148,7 +177,13 @@ export default function Page() {
           </Text>
         </Reveal>
         <Reveal delay={0.1}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
             <div style={{ width: "100%", maxWidth: 520 }}>
               <Seating />
             </div>
@@ -160,12 +195,24 @@ export default function Page() {
         <Mandala size={36} />
       </Divider>
 
-      <section className="section wrap" style={{ paddingBottom: 120 }}>
+      {/* Countdown Section */}
+      <section
+        className="section wrap"
+        style={{
+          textAlign: "center",
+          padding: "40px 16px 80px",
+        }}
+      >
         <Reveal>
           <Title
             level={2}
             className="serif"
-            style={{ fontWeight: 400, color: "#a07c34" }}
+            style={{
+              fontWeight: 400,
+              color: "#a07c34",
+              fontSize: "clamp(24px, 5vw, 36px)",
+              marginBottom: 24,
+            }}
           >
             Counting down to our day
           </Title>

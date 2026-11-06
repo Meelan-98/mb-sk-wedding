@@ -48,3 +48,23 @@ body { margin: 0; background: #fff; color: var(--ink); font-family: var(--font-b
   animation: writeIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
+.masonry {
+  column-count: 3;
+  column-gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+.photo {
+  break-inside: avoid;
+  margin-bottom: 24px;
+}
+
+.photo img {
+  min-height: 200px;
+  background-color: #f7f5f0; 
+}
