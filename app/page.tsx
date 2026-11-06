@@ -1,10 +1,10 @@
 "use client";
 import { Typography, Row, Col, Divider } from "antd";
-import Lotus from "@/components/Lotus";
 import Reveal from "@/components/Reveal";
 import Seating from "@/components/Seating";
 import Countdown from "@/components/Countdown";
 import { wedding } from "@/data/wedding";
+import Mandala from "@/components/Mandala";
 
 const { Title, Text, Link } = Typography;
 const label = {
@@ -19,7 +19,7 @@ export default function Page() {
   return (
     <main>
       <section className="hero">
-        <Lotus size={150} />
+        <Mandala size={150} />
         <Title
           className="serif"
           style={{
@@ -71,7 +71,7 @@ export default function Page() {
       </section>
 
       <Divider style={{ borderColor: "#e8d9b0", margin: 0 }}>
-        <Lotus size={36} light />
+        <Mandala size={36} />
       </Divider>
 
       <section className="section wrap">
@@ -97,7 +97,7 @@ export default function Page() {
       </section>
 
       <Divider style={{ borderColor: "#e8d9b0", margin: 0 }}>
-        <Lotus size={36} light />
+        <Mandala size={36} />
       </Divider>
 
       <section className="section wrap" style={{ paddingBottom: 120 }}>
