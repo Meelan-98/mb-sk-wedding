@@ -17,7 +17,6 @@ export default function Story() {
   return (
     <main className="wrap" style={{ paddingBottom: 96 }}>
       <section className="section" style={{ paddingBottom: 40 }}>
-        <Lotus size={90} />
         <Title
           className="serif"
           style={{
@@ -29,7 +28,6 @@ export default function Story() {
         >
           Our Story
         </Title>
-        <hr className="rule" />
       </section>
 
       <div className="masonry">
