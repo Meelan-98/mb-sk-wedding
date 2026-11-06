@@ -121,6 +121,7 @@ export default function Page() {
                 height: "auto",
                 padding: "8px 24px",
                 fontSize: 16,
+                boxShadow: "none",
               }}
             >
               Our Story
