@@ -1,7 +1,17 @@
-'use client';
-import { useEffect, useRef, useState, ReactNode, CSSProperties } from 'react';
+"use client";
+import { useEffect, useRef, useState, ReactNode, CSSProperties } from "react";
 
-export default function Reveal({ children, delay = 0, className = '', style }: { children: ReactNode; delay?: number; className?: string; style?: CSSProperties }) {
+export default function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  style,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+  style?: CSSProperties;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
 
@@ -9,15 +19,27 @@ export default function Reveal({ children, delay = 0, className = '', style }: {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } },
-      { threshold: 0.12 }
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.12 },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
   return (
-    <div ref={ref} className={`reveal ${shown ? 'in' : ''} ${className}`} style={{ ['--d' as string]: `${delay}s`, ...style }}>
+    <div
+      ref={ref}
+      className={`reveal ${shown ? "in" : ""} ${className}`}
+      style={{
+        ["--d" as string]: `${delay}s`,
+        ...style,
+      }}
+    >
       {children}
     </div>
   );
