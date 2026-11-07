@@ -6,6 +6,7 @@ import Countdown from "@/components/Countdown";
 import { wedding } from "@/data/wedding";
 import Mandala from "@/components/Mandala";
 import Link from "next/link";
+import { DownOutlined } from "@ant-design/icons";
 
 const { Title, Text, Link: AntLink } = Typography;
 const label = {
@@ -19,10 +20,27 @@ const label = {
 const text = `${wedding.groom} ❤️ ${wedding.bride}`;
 
 export default function Page() {
+  const scrollToNext = () => {
+    const heroElement = document.querySelector(".hero");
+    if (heroElement) {
+      const heroHeight = heroElement.clientHeight;
+      window.scrollTo({
+        top: heroHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <main style={{ overflowX: "hidden", width: "100%" }}>
-      {/* Hero Section */}
       <section className="hero" style={{ padding: "0 16px" }}>
+        <div className="hero-video-container">
+          <video autoPlay loop muted playsInline className="hero-video">
+            <source src="/videos/waves.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay" />
+        </div>
+
         <Title
           className="serif"
           style={{
@@ -36,6 +54,8 @@ export default function Page() {
             justifyContent: "center",
             textAlign: "center",
             wordBreak: "break-word",
+            position: "relative", // Ensures text sits above the video
+            zIndex: 1,
           }}
         >
           {text.split("").map((char, index) => (
@@ -48,11 +68,12 @@ export default function Page() {
             </span>
           ))}
         </Title>
-      </section>
 
-      <Divider style={{ borderColor: "#e8d9b0", margin: 0 }}>
-        <Mandala size={36} />
-      </Divider>
+        <div className="scroll-indicator" onClick={scrollToNext}>
+          <span className="scroll-text">Scroll below</span>
+          <DownOutlined className="scroll-arrow" />
+        </div>
+      </section>
 
       {/* Details Section */}
       <section className="section wrap" style={{ padding: "40px 16px" }}>
@@ -126,8 +147,7 @@ export default function Page() {
               padding: "0 8px",
             }}
           >
-            Since 2020.08.31 we shared beautiful moments together. Wanna see a
-            glimpse of those moments, click here to tap into our memories
+            Since August 31, 2020, we have shared countless beautiful moments
           </Text>
         </Reveal>
         <Reveal delay={0.1}>
@@ -145,7 +165,7 @@ export default function Page() {
                 boxShadow: "none",
               }}
             >
-              Our Story
+              See our memories
             </Button>
           </Link>
         </Reveal>
@@ -173,7 +193,7 @@ export default function Page() {
             Seating Arrangement
           </Title>
           <Text type="secondary" style={{ display: "block", marginBottom: 24 }}>
-            Enter your name to find your table.
+            Find your seat and the company
           </Text>
         </Reveal>
         <Reveal delay={0.1}>

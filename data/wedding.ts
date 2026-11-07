@@ -1,7 +1,7 @@
 export const wedding = {
   bride: "Shehani",
   groom: "Meelan",
-  dateLabel: "2026.11.11",
+  dateLabel: "11 November 2026",
   dayLabel: "Wednesday",
   venue: "Asliya Golden Cassandra",
   mapsUrl:
