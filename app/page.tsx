@@ -36,7 +36,7 @@ export default function Page() {
       <section className="hero" style={{ padding: "0 16px" }}>
         <div className="hero-video-container">
           <video autoPlay loop muted playsInline className="hero-video">
-            <source src="/videos/waves.mp4" type="video/mp4" />
+            <source src="videos/waves.mp4" type="video/mp4" />
           </video>
           <div className="hero-overlay" />
         </div>
