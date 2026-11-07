@@ -7,6 +7,7 @@ import { wedding } from "@/data/wedding";
 import Mandala from "@/components/Mandala";
 import Link from "next/link";
 import { DownOutlined } from "@ant-design/icons";
+import { Waves } from "@/components/Waves";
 
 const { Title, Text, Link: AntLink } = Typography;
 const label = {
@@ -35,9 +36,7 @@ export default function Page() {
     <main style={{ overflowX: "hidden", width: "100%" }}>
       <section className="hero" style={{ padding: "0 16px" }}>
         <div className="hero-video-container">
-          <video autoPlay loop muted playsInline className="hero-video">
-            <source src="videos/waves.mp4" type="video/mp4" />
-          </video>
+          <Waves />
           <div className="hero-overlay" />
         </div>
 
