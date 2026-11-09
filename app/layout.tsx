@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Shehani & Meelan Wedding",
     images: [
       {
-        url: "photos/og-v1.webp",
+        url: "photos/og-v2.webp",
         width: 1200,
         height: 630,
         alt: "Shehani & Meelan",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shehani & Meelan",
     description: "Join us on 2026.11.11",
-    images: ["photos/og-v1.webp"],
+    images: ["photos/og-v2.webp"],
   },
 };
 
