@@ -16,6 +16,7 @@ export function Waves() {
   return (
     <video
       ref={videoRef}
+      poster="/photos/waves.webp"
       autoPlay
       loop
       muted
